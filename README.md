@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Create .env file and then add REACT_APP_GOOGLE_CLIENT_ID="YOUR_GOOGLE_CLIENT_ID"
+
 ## Available Scripts
 
 In the project directory, you can run:
