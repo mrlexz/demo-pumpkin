@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
-import PublicPage from './pages/PublicPage';
 import List from './pages/List';
 import { ProfileObj } from './services/profile/types';
 import PrivateRoute from './Routers/PrivateRoute';
-import PublicRoute from './Routers/PublicRoute';
 
 export const GoogleAuthContext = React.createContext<{
   profile: ProfileObj | null;
@@ -24,7 +22,7 @@ function App() {
       <BrowserRouter>
         <GoogleAuthContext.Provider value={{ profile, setProfile }}>
           <Routes>
-            <Route path="/" element={<PublicPage />} />
+            <Route path="/" element={<PrivateRoute />} />
             <Route path="/list" element={<PrivateRoute />}>
               <Route path="" element={<List />} />
             </Route>
@@ -35,6 +33,9 @@ function App() {
           </Routes> 
         </GoogleAuthContext.Provider>    
       </BrowserRouter>
+      <div className="typewriter">
+        <h3>Please ignore the result, because the result of API example does not work right, so i just add call api in this app</h3>
+      </div>
     </div>
   );
 }
